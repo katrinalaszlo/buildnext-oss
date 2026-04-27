@@ -6,38 +6,183 @@
 <title>BuildNext — Turn customer calls into product decisions</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; }
+body {
+  background: #0d1117;
+  background-image: radial-gradient(ellipse at top, #161b22 0%, #0d1117 60%);
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
 code, pre { font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; }
 a { color: #58a6ff; text-decoration: none; }
 a:hover { text-decoration: underline; }
-.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-header { padding: 80px 0 48px; text-align: center; }
-header h1 { font-size: 2.4rem; color: #f0f6fc; font-weight: 700; margin-bottom: 16px; }
-header p { font-size: 1.15rem; color: #8b949e; max-width: 540px; margin: 0 auto; }
-section { padding: 48px 0; border-top: 1px solid #21262d; }
-h2 { font-size: 1.4rem; color: #f0f6fc; margin-bottom: 24px; }
-h3 { font-size: 1rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
-.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-@media (max-width: 640px) { .before-after { grid-template-columns: 1fr; } header h1 { font-size: 1.8rem; } }
-.panel { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; font-size: 0.85rem; }
-.panel pre { white-space: pre-wrap; word-break: break-word; color: #c9d1d9; }
-.panel .tag { color: #7ee787; }
-.panel .speaker { color: #d2a8ff; }
-.panel .link { color: #58a6ff; }
-.steps { list-style: none; counter-reset: step; }
-.steps li { counter-increment: step; padding: 12px 0; padding-left: 40px; position: relative; }
-.steps li::before { content: counter(step); position: absolute; left: 0; width: 28px; height: 28px; background: #21262d; border-radius: 50%; text-align: center; line-height: 28px; font-size: 0.85rem; color: #58a6ff; font-weight: 600; }
-.output-list { list-style: none; }
-.output-list li { padding: 8px 0; padding-left: 24px; position: relative; }
-.output-list li::before { content: ""; position: absolute; left: 0; top: 16px; width: 8px; height: 8px; background: #58a6ff; border-radius: 50%; }
-.cta { text-align: center; padding: 64px 0; }
-.cta a { display: inline-block; background: #238636; color: #fff; padding: 14px 32px; border-radius: 6px; font-size: 1.05rem; font-weight: 600; }
-.cta a:hover { background: #2ea043; text-decoration: none; }
-.cta p { margin-top: 12px; color: #8b949e; font-size: 0.9rem; }
-.stats { display: flex; gap: 32px; justify-content: center; margin: 32px 0; flex-wrap: wrap; }
-.stat { text-align: center; }
-.stat .num { font-size: 2rem; color: #f0f6fc; font-weight: 700; display: block; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+header { padding: 120px 0 48px; text-align: center; }
+header h1 {
+  font-size: 2.8rem;
+  color: #f0f6fc;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+header .tagline {
+  font-size: 1.2rem;
+  color: #c9d1d9;
+  max-width: 540px;
+  margin: 0 auto 8px;
+}
+header .sub {
+  font-size: 0.95rem;
+  color: #8b949e;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  margin: 40px 0 56px;
+  flex-wrap: wrap;
+}
+.stat {
+  text-align: center;
+  padding: 0 32px;
+  border-left: 1px solid #21262d;
+}
+.stat:first-child { border-left: none; }
+.stat .num {
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: block;
+  background: linear-gradient(180deg, #f0f6fc 30%, #8b949e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .stat .label { font-size: 0.8rem; color: #8b949e; }
+
+/* Sections */
+section { padding: 56px 0; border-top: 1px solid #21262d; }
+h2 { font-size: 1.4rem; color: #f0f6fc; margin-bottom: 28px; }
+h3 { font-size: 0.8rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+
+/* Before/after panels */
+.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.panel {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+.panel-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+.panel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.panel-dot.r { background: #f85149; }
+.panel-dot.y { background: #d29922; }
+.panel-dot.g { background: #3fb950; }
+.panel-filename {
+  font-size: 0.75rem;
+  color: #484f58;
+  margin-left: 6px;
+  font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+}
+.panel pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #c9d1d9;
+  padding: 16px;
+  margin: 0;
+}
+.panel-before { box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+.panel-after {
+  border-color: rgba(56,139,253,0.15);
+  box-shadow: 0 8px 32px rgba(56,139,253,0.06), 0 4px 24px rgba(0,0,0,0.2);
+}
+.tag { color: #7ee787; }
+.speaker { color: #d2a8ff; }
+.link { color: #58a6ff; }
+
+/* Steps */
+.steps { list-style: none; counter-reset: step; }
+.steps li { counter-increment: step; padding: 14px 0; padding-left: 44px; position: relative; }
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 26px;
+  font-size: 0.85rem;
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+/* Output list */
+.output-list { list-style: none; }
+.output-list li { padding: 10px 0; padding-left: 24px; position: relative; }
+.output-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background: #58a6ff;
+  border-radius: 50%;
+}
+
+/* CTA */
+.cta { text-align: center; padding: 72px 0 80px; }
+.cta a {
+  display: inline-block;
+  background: #238636;
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(35,134,54,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: all 0.2s ease;
+}
+.cta a:hover {
+  background: #2ea043;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(35,134,54,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.cta p { margin-top: 14px; color: #8b949e; font-size: 0.9rem; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  header { padding: 80px 0 36px; }
+  header h1 { font-size: 2rem; }
+  header .tagline { font-size: 1.05rem; }
+  .before-after { grid-template-columns: 1fr; }
+  .stats { gap: 16px 0; }
+  .stat { padding: 8px 24px; border-left: none; }
+  .stat .num { font-size: 1.8rem; }
+}
 </style>
 </head>
 <body>
@@ -45,7 +190,8 @@ h3 { font-size: 1rem; color: #8b949e; text-transform: uppercase; letter-spacing:
 
 <header>
 <h1>BuildNext</h1>
-<p>Turn customer call transcripts into evidence-grounded user stories. No database, no SaaS. Markdown, an LLM, and Obsidian.</p>
+<p class="tagline">Turn customer calls into evidence-grounded user stories.</p>
+<p class="sub">No database. No SaaS. Just markdown, an LLM, and Obsidian.</p>
 </header>
 
 <div class="stats">
@@ -54,14 +200,20 @@ h3 { font-size: 1rem; color: #8b949e; text-transform: uppercase; letter-spacing:
 <div class="stat"><span class="num">9</span><span class="label">stories synthesized</span></div>
 <div class="stat"><span class="num">5</span><span class="label">features identified</span></div>
 </div>
-<p style="text-align:center;color:#8b949e;font-size:0.8rem;margin-top:-16px;">From real usage. The repo includes 3 anonymized example transcripts to get you started.</p>
 
 <section>
 <h2>Before and after</h2>
 <div class="before-after">
 <div>
 <h3>Raw transcript</h3>
-<div class="panel"><pre>Customer A: We charge a flat $99 a
+<div class="panel panel-before">
+<div class="panel-chrome">
+<span class="panel-dot r"></span>
+<span class="panel-dot y"></span>
+<span class="panel-dot g"></span>
+<span class="panel-filename">transcript.md</span>
+</div>
+<pre>Customer A: We charge a flat $99 a
 month per seat, but our costs per
 customer vary wildly. Some customers
 use 10x more tokens than others. We
@@ -73,11 +225,19 @@ is positive.
 
 Customer A: I think maybe 10% of our
 customers are unprofitable, but I
-literally cannot prove it...</pre></div>
+literally cannot prove it...</pre>
+</div>
 </div>
 <div>
 <h3>Structured evidence</h3>
-<div class="panel"><pre><span class="speaker">Customer A</span> — NovaTech (Head of Product)
+<div class="panel panel-after">
+<div class="panel-chrome">
+<span class="panel-dot r"></span>
+<span class="panel-dot y"></span>
+<span class="panel-dot g"></span>
+<span class="panel-filename">Customer A.md</span>
+</div>
+<pre><span class="speaker">Customer A</span> — NovaTech (Head of Product)
 8 quotes | <span class="tag">#pain-point</span> <span class="tag">#buying-signal</span> <span class="tag">#workflow</span>
 
 - "We have no idea what our actual margin
@@ -92,7 +252,8 @@ literally cannot prove it...</pre></div>
   <span class="tag">#buying-signal</span>
 
 Story: <span class="link">[[No Per-Customer Margin Visibility]]</span>
-Feature: <span class="link">[[Cost Intelligence]]</span></pre></div>
+Feature: <span class="link">[[Cost Intelligence]]</span></pre>
+</div>
 </div>
 </div>
 </section>
