@@ -1,7 +1,7 @@
 ---
 title: "Pricing Infrastructure"
 type: feature
-priority: medium
+priority: high
 stories: 3
 ---
 
@@ -9,7 +9,7 @@ stories: 3
 
 Stripe handles payments. Everything between the payment and the product — entitlements,  metering,  pricing logic — companies build by hand or don't build at all.
 
-**Stories:** 3 | **Evidence:** 14 quotes across 11 customers
+**Stories:** 3 | **Evidence:** 18 quotes across 11 customers
 
 ---
 
@@ -31,6 +31,6 @@ Three flavors of the same gap:
 
 ## Stories
 
-- [[Manual Stripe Workflows Don't Scale]] — 5 customers,  proposed
-- [[Can't Bill for Custom Outcome Metrics]] — 4 customers,  proposed
-- [[Build vs Buy Tension for Billing]] — 5 customers,  proposed
+- [[Manual Stripe Workflows Don't Scale]] — 6 customers,  high
+- [[Can't Bill for Custom Outcome Metrics]] — 4 customers,  medium
+- [[Build vs Buy Tension for Billing]] — 5 customers,  medium

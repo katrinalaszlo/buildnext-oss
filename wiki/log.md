@@ -1,5 +1,20 @@
 # Log
 
+## [2026-04-27] update | Full wiki prioritization and citation sweep
+
+**Changes:**
+- Rewrote [[index.md]] — all 33 customers now listed, organized by buying signal tier (high intent / active / advisors / monitoring)
+- Promoted 3 features to high priority: [[Cost Intelligence]], [[Pricing Infrastructure]], [[Revenue Aggregation]]
+- Promoted 4 stories to high priority: [[No Per-Customer Margin Visibility]], [[Runaway AI Costs Without Guardrails]], [[Manual Stripe Workflows Don't Scale]], [[No Unified View Across Providers and Revenue]]
+- Added [[Eric Goldberg]] to [[No Per-Customer Margin Visibility]] and [[No Unified View Across Providers and Revenue]]
+- Added [[Varun Villait]] and [[Moe Amaya]] to [[No Per-Customer Margin Visibility]]
+- Added [[Christina Trampota]] and [[Shilpa Prasad]] to [[Runaway AI Costs Without Guardrails]]
+- Added [[Michael Oeth]] and [[Shilpa Prasad]] to [[Token Tracking Is Guesswork]]
+- Added [[Himanshu Arora]] to [[Manual Stripe Workflows Don't Scale]]
+- Updated all feature page evidence counts and story priority labels
+
+**Why:** Index was stale (showed 4 customers when 33 exist). All stories were "proposed/medium" with no differentiation. 8 customers with relevant quotes weren't cited in any story. This sweep applies evidence-weighted prioritization and closes citation gaps so the wiki reflects the actual signal strength.
+
 ## [2026-04-27] ingest | David Garnitz call
 
 **Changes:**

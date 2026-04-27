@@ -3,8 +3,8 @@ title: "No Per-Customer Margin Visibility"
 type: story
 status: proposed
 story-type: new_feature
-priority: medium
-evidence: 6
+priority: high
+evidence: 9
 feature: "[[Cost Intelligence]]"
 ---
 
@@ -12,7 +12,7 @@ feature: "[[Cost Intelligence]]"
 
 **Status:** proposed
 **Type:** new_feature
-**Evidence:** 6 customers
+**Evidence:** 9 customers
 
 ## User Story
 
@@ -40,3 +40,9 @@ feature: "[[Cost Intelligence]]"
 - "we don't have like we don't have a visibility on uh who brings like what in profit and we only kind of value the clients and like net revenue that they bring." — [[Elif Dinc]] #pain-point
 
 - "Honestly,  it's not really tracked right now. like we we're we're pretty new um in you know in like the current build and so like the systems aren't to my knowledge like set up yet for that" — [[Michael Arulfo]] #pain-point
+
+- "It's kind of like finding the whales and the minnows and seeing who's costing you all your margin and stuff like that." — [[Eric Goldberg]] #qualitative
+
+- "I have not this is kind of the first time I've seen like this much granularity and sort of like the margin piece and like from any platform I kind of looked at" — [[Varun Villait]] #qualitative #buying-signal
+
+- "the cost side is really cool. Like that part is like it's just none other pricing company's ever did this historically. So that's why I was and that obviously it's like margin profiles are so important these days" — [[Moe Amaya]] #qualitative #buying-signal

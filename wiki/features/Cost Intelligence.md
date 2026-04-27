@@ -1,7 +1,7 @@
 ---
 title: "Cost Intelligence"
 type: feature
-priority: medium
+priority: high
 stories: 3
 ---
 
@@ -9,7 +9,7 @@ stories: 3
 
 Companies can't see which customers or features are profitable. They get one bill from Anthropic at month-end with no breakdown.
 
-**Stories:** 3 | **Evidence:** 19 quotes across 11 customers
+**Stories:** 3 | **Evidence:** 29 quotes across 15 customers
 
 ---
 
@@ -29,6 +29,6 @@ This creates two downstream failures:
 
 ## Stories
 
-- [[No Per-Customer Margin Visibility]] — 6 customers,  proposed
-- [[Runaway AI Costs Without Guardrails]] — 5 customers,  proposed
-- [[Token Tracking Is Guesswork]] — 4 customers,  proposed
+- [[No Per-Customer Margin Visibility]] — 9 customers,  high
+- [[Runaway AI Costs Without Guardrails]] — 7 customers,  high
+- [[Token Tracking Is Guesswork]] — 6 customers,  medium
