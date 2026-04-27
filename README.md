@@ -98,7 +98,9 @@ For MCP-compatible agents, the wiki is readable as-is — the agent reads markdo
 
 ## Example
 
-`raw/example-transcript.md` contains a fictional demo call between StreamLine and a VP of Engineering. Ingest it to see how the agent extracts quotes, creates a customer page, and tags evidence.
+The repo ships with 3 fictional transcripts and a pre-built wiki (3 customers, 2 stories, 2 features) so you can explore the output immediately. Open `wiki/` in Obsidian to see the graph.
+
+When you're ready to use your own data, just drop transcripts into `raw/` and ingest. Your data lives alongside the examples. Delete the example files whenever you want — they won't affect your wiki.
 
 ## License
 
