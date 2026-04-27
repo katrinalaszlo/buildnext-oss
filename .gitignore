@@ -10,8 +10,11 @@ wiki/customers/*
 wiki/stories/*
 wiki/features/*
 !wiki/customers/.gitkeep
+!wiki/customers/Alex Chen.md
 !wiki/stories/.gitkeep
+!wiki/stories/Cross-Team Velocity Is Guesswork.md
 !wiki/features/.gitkeep
+!wiki/features/Engineering Analytics.md
 .gstack/
 linkedin-drafts.md
 dm-templates.md
