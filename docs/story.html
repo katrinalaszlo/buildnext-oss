@@ -109,11 +109,13 @@ GitHub
 
 <section>
 
-<p>I'm Kat. I'm building <a href="https://tanso.io">Tanso</a>. I did 32 customer discovery calls in two months and couldn't keep track of what anyone told me.</p>
+<p>I'm Kat. I'm building <a href="https://tanso.io">Tanso</a> and thinking about how context flows through a team.</p>
 
-<p>At a previous company I'd built a workflow in Airtable for this. Feature requests flowed into user stories, grouped into epics, linked to a calendar and internal feedback. It worked. But it was all manual.</p>
+<p>At a previous company I built a workflow in Airtable for this. Feature requests flowed into user stories, grouped into epics, linked to internal feedback. Designers and engineers loved having the original customer quotes linked to stories. They could double-click into more context instead of trusting my summary.</p>
 
-<p>Then I started playing with <a href="https://github.com/karpathy">Karpathy's</a> LLM Wiki. Entity pages that evolve over time. Concept pages that grow across sources. Everything traceable. And I realized: this is the same structure as my old Airtable workflow. Customer pages instead of contact records. Stories instead of feature requests. Features instead of epics. Except an LLM maintains the whole thing.</p>
+<p>I think context matters just as much for AI. When I use Claude Code to build features, it writes better code when it has structured customer evidence instead of just a prompt.</p>
+
+<p>I started playing with <a href="https://github.com/karpathy">Karpathy's</a> LLM Wiki and realized it was the same structure as my old Airtable workflow. Customer pages instead of contact records. Stories instead of feature requests. Features instead of epics. Except an LLM maintains the whole thing.</p>
 
 <div class="stats">
 <div class="stat"><span class="num">32</span><span class="label">calls</span></div>
@@ -122,15 +124,11 @@ GitHub
 <div class="stat"><span class="num">5</span><span class="label">features</span></div>
 </div>
 
-<p>Drop a transcript in a folder. Tell the agent to ingest it. It extracts exact quotes, tags them, writes customer pages. Then it looks across all your customers and synthesizes user stories with acceptance criteria. No database. No app. Just markdown files and a schema that tells the agent what to do.</p>
+<p>You paste a transcript, tell the agent to ingest it, and it extracts quotes, tags them, and synthesizes user stories from the evidence. No database. No SaaS. Just markdown and Obsidian.</p>
 
-<p>If I delete a story the agent got wrong, it doesn't come back. If I move a story to a different feature, the agent learns the grouping. The wiki gets smarter because every edit teaches it what good looks like.</p>
+<p>If you delete a story the agent got wrong, it doesn't come back. If you move a story to a different feature, the agent learns the grouping.</p>
 
-<p>At a previous company, designers and engineers I worked with loved having user stories linked to the original customer quotes in Figma and in tickets. They could double-click into more context instead of just trusting my summary. I think agents need the same thing. When I use Claude Code to build features, I point it at this wiki. It writes better code when it has structured customer evidence instead of just "build me a billing page."</p>
-
-<p>People who'd get value from this: founders drowning in customer call transcripts, PMs who want stories backed by evidence instead of opinions, engineers and designers who want to know why they're building something, anyone using AI to code who wants better context.</p>
-
-<p>I open sourced it.</p>
+<p>I started using it for Tanso and wanted to share it with other PMs. It's actually really easy even if you're not technical. You can download it and run it with Claude Code or whatever tool you use. If you're a designer, PM, sales, or customer success, this can be useful.</p>
 
 </section>
 
