@@ -44,7 +44,7 @@ Three layers: **raw** (immutable input), **wiki** (LLM-maintained output), **sch
 
 4. Open the project in your AI editor and tell it: **"Ingest the transcript in raw/"**
 
-5. Browse the output in `wiki/` — or open `wiki/` as an Obsidian vault for graph view
+5. Open the `wiki/` folder (not the repo root) in [Obsidian](https://obsidian.md) as a vault. You'll see a graph of customers, stories, and features — all linked. No Obsidian? The files are plain markdown, readable in any editor.
 
 ## What the agent does
 
