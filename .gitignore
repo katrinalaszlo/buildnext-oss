@@ -13,3 +13,5 @@ wiki/features/*
 !wiki/stories/.gitkeep
 !wiki/features/.gitkeep
 .gstack/
+linkedin-drafts.md
+dm-templates.md
