@@ -62,8 +62,8 @@ blockquote {
 ul { margin: 12px 0 16px 20px; }
 li { margin-bottom: 8px; font-size: 0.95rem; }
 
-.stats { display: flex; gap: 0; justify-content: center; margin: 40px 0 56px; flex-wrap: wrap; }
-.stat { text-align: center; padding: 0 32px; border-left: 1px solid #21262d; }
+.stats { display: flex; gap: 0; justify-content: center; margin: 40px 0 56px; flex-wrap: nowrap; }
+.stat { text-align: center; padding: 0 24px; border-left: 1px solid #21262d; flex-shrink: 0; }
 .stat:first-child { border-left: none; }
 .stat .num { font-size: 2.4rem; font-weight: 700; display: block; background: linear-gradient(180deg, #f0f6fc 30%, #8b949e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .stat .label { font-size: 0.8rem; color: #8b949e; }
@@ -104,55 +104,33 @@ GitHub
 <div class="container">
 
 <header>
-<h1>The story</h1>
-<p class="sub">I built this for myself. Then YC described it in an RFS. So I open sourced it.</p>
+<h1>How this started</h1>
 </header>
-
-<div class="stats">
-<div class="stat"><span class="num">32</span><span class="label">calls processed</span></div>
-<div class="stat"><span class="num">287</span><span class="label">quotes extracted</span></div>
-<div class="stat"><span class="num">9</span><span class="label">stories synthesized</span></div>
-<div class="stat"><span class="num">5</span><span class="label">features identified</span></div>
-</div>
 
 <section>
 
-<p>I'm Kat. I'm building <a href="https://tanso.io">Tanso</a>, a B2B SaaS monetization platform. Two-person team. I did 32 customer discovery calls in two months.</p>
+<p>I'm Kat. I'm building <a href="https://tanso.io">Tanso</a>. Two-person team. I did 32 customer discovery calls in two months and couldn't keep track of what anyone told me.</p>
 
-<p>After call 15 I stopped being able to track what people were telling me. I had transcripts. I had notes. I couldn't tell you which pain points actually came up more than once without going back and re-reading everything.</p>
+<p>At a previous company I'd built a workflow in Airtable for this. Feature requests flowed into user stories, grouped into epics, linked to a calendar and internal feedback. It worked. But it was all manual. Tagging quotes, grouping themes, writing stories. Hours of work that I just... didn't do this time around.</p>
 
-<p>Spreadsheets didn't work. Notion didn't work. Both require me to do the organizing. If I had time to tag 287 quotes by hand, I wouldn't need a tool.</p>
+<p>Then I started playing with <a href="https://github.com/karpathy">Karpathy's</a> LLM Wiki. Entity pages that evolve over time. Concept pages that grow across sources. Everything traceable. And I realized: this is the same structure as my old Airtable workflow. Customer pages instead of contact records. Stories instead of feature requests. Features instead of epics. Except an LLM can maintain it.</p>
 
-<h2>What I actually built</h2>
+<div class="stats">
+<div class="stat"><span class="num">32</span><span class="label">calls</span></div>
+<div class="stat"><span class="num">287</span><span class="label">quotes</span></div>
+<div class="stat"><span class="num">9</span><span class="label">stories</span></div>
+<div class="stat"><span class="num">5</span><span class="label">features</span></div>
+</div>
 
-<p>A folder of markdown files and a schema (CLAUDE.md) that tells an AI agent how to process transcripts. Drop a call transcript in. The agent extracts exact quotes, tags them, creates customer pages. Then it looks across customers and synthesizes user stories with acceptance criteria.</p>
+<p>Drop a transcript in a folder. Tell the agent to ingest it. It extracts exact quotes, tags them, writes customer pages. Then it looks across all your customers and synthesizes user stories with acceptance criteria. No database. No app. Just markdown files and a schema that tells the agent what to do.</p>
 
-<p>No database. No app. No accounts. The whole thing is files you own.</p>
+<p>If I delete a story the agent got wrong, it doesn't come back. If I move a story to a different feature, the agent learns the grouping. The wiki gets smarter because every edit teaches it what good looks like.</p>
 
-<p>I built it on Karpathy's LLM Wiki pattern: entity pages that evolve, concept pages that grow across customers, everything traceable back to a source. The agent maintains it. I curate it. If I delete a story the agent got wrong, it doesn't come back.</p>
+<p>The part I didn't plan for: the wiki became the thing everyone uses. My designer opens a story and sees the actual customer words behind a feature request. My co-founder and I argue about priorities using quotes, not gut feelings. And when I use Claude Code to build, I point it at the wiki. It writes better code when it has real customer context instead of just "build me a billing page."</p>
 
-<h2>What surprised me</h2>
+<p>People who'd get value from this: founders drowning in customer call transcripts, PMs who want stories backed by evidence instead of opinions, engineers and designers who want to know why they're building something, anyone using AI to code who wants better context.</p>
 
-<p>The wiki became the thing I share with everyone. My designer opens it and sees the actual customer words behind a feature. My co-founder reads the stories and we argue about priorities using evidence, not gut feelings. When I use Claude Code to build features, I point it at the wiki and it writes code grounded in what customers actually said.</p>
-
-<p>That last part is the one nobody talks about. AI builds better with more context. Structured customer evidence is the best context you can give it.</p>
-
-<h2>Who this is for</h2>
-
-<ul>
-<li>Founders who did 20+ customer calls and are making decisions from memory</li>
-<li>PMs who want user stories backed by evidence, not opinions</li>
-<li>Engineers and designers who want to know why they're building something</li>
-<li>Anyone using AI to code and wants better context than "build me a billing page"</li>
-</ul>
-
-<h2>The YC connection</h2>
-
-<p>After I built this, YC published an RFS for "Cursor for Product Management":</p>
-
-<blockquote>"Upload customer interviews and product usage data, ask 'what should we build next?', and get the outline of a new feature complete with an explanation based on customer feedback."<br>— YC RFS, Spring 2026</blockquote>
-
-<p>That's what this does. I open sourced it.</p>
+<p>I open sourced it.</p>
 
 </section>
 
