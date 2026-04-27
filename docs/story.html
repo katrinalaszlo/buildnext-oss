@@ -62,6 +62,12 @@ blockquote {
 ul { margin: 12px 0 16px 20px; }
 li { margin-bottom: 8px; font-size: 0.95rem; }
 
+.stats { display: flex; gap: 0; justify-content: center; margin: 40px 0 56px; flex-wrap: wrap; }
+.stat { text-align: center; padding: 0 32px; border-left: 1px solid #21262d; }
+.stat:first-child { border-left: none; }
+.stat .num { font-size: 2.4rem; font-weight: 700; display: block; background: linear-gradient(180deg, #f0f6fc 30%, #8b949e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat .label { font-size: 0.8rem; color: #8b949e; }
+
 .cta { text-align: center; padding: 64px 0 80px; border-top: 1px solid #21262d; margin-top: 48px; }
 .cta a {
   display: inline-block;
@@ -98,61 +104,55 @@ GitHub
 <div class="container">
 
 <header>
-<p class="timeline">April 2026</p>
-<h1>Why I built this</h1>
-<p class="sub">I did 32 customer discovery calls for Tanso. I had transcripts for all of them. I could not tell you which pain points actually recurred across customers without guessing.</p>
+<h1>The story</h1>
+<p class="sub">I built this for myself. Then YC described it in an RFS. So I open sourced it.</p>
 </header>
+
+<div class="stats">
+<div class="stat"><span class="num">32</span><span class="label">calls processed</span></div>
+<div class="stat"><span class="num">287</span><span class="label">quotes extracted</span></div>
+<div class="stat"><span class="num">9</span><span class="label">stories synthesized</span></div>
+<div class="stat"><span class="num">5</span><span class="label">features identified</span></div>
+</div>
 
 <section>
 
-<h2>The problem</h2>
+<p>I'm Kat. I'm building <a href="https://tanso.io">Tanso</a>, a B2B SaaS monetization platform. Two-person team. I did 32 customer discovery calls in two months.</p>
 
-<p>Customer discovery has a dirty secret: most founders stop synthesizing after call 10. You still do the calls. You just stop turning them into structured decisions. The transcripts pile up. The insights stay locked in your head.</p>
+<p>After call 15 I stopped being able to track what people were telling me. I had transcripts. I had notes. I couldn't tell you which pain points actually came up more than once without going back and re-reading everything.</p>
 
-<p>I tried spreadsheets. I tried tagging quotes in Notion. Both required me to do the organizing, which meant it didn't get done. I was making product decisions from memory, not evidence.</p>
+<p>Spreadsheets didn't work. Notion didn't work. Both require me to do the organizing. If I had time to tag 287 quotes by hand, I wouldn't need a tool.</p>
 
-<h2>The insight</h2>
+<h2>What I actually built</h2>
 
-<div class="insight">
-<div class="label">Key realization</div>
-<p>The user story isn't something a PM writes. It's something the data produces. The PM just approves it.</p>
-</div>
+<p>A folder of markdown files and a schema (CLAUDE.md) that tells an AI agent how to process transcripts. Drop a call transcript in. The agent extracts exact quotes, tags them, creates customer pages. Then it looks across customers and synthesizes user stories with acceptance criteria.</p>
 
-<p>I'd already built a version of this manually at a previous company in Airtable: feature requests flowing into user stories with exact quotes, grouped by theme. The structure was right. The manual work was the problem.</p>
+<p>No database. No app. No accounts. The whole thing is files you own.</p>
 
-<p>What if an AI agent could maintain the knowledge base? Read new transcripts, extract quotes, update customer pages, synthesize user stories, flag contradictions. The PM curates. The agent does the bookkeeping.</p>
+<p>I built it on Karpathy's LLM Wiki pattern: entity pages that evolve, concept pages that grow across customers, everything traceable back to a source. The agent maintains it. I curate it. If I delete a story the agent got wrong, it doesn't come back.</p>
 
-<h2>The architecture</h2>
+<h2>What surprised me</h2>
 
-<p>Embedding-based clustering turned out to be useless. "These vectors are close" doesn't mean "these are about the same problem." What I needed was an LLM that actively maintains a structured knowledge base.</p>
+<p>The wiki became the thing I share with everyone. My designer opens it and sees the actual customer words behind a feature. My co-founder reads the stories and we argue about priorities using evidence, not gut feelings. When I use Claude Code to build features, I point it at the wiki and it writes code grounded in what customers actually said.</p>
 
-<p>Inspired by Karpathy's LLM Wiki pattern: source summaries, entity pages that evolve over time, concept pages that grow across customers, synthesis pages for cross-customer analysis. Every claim traceable to a source. Every new ingest makes the knowledge base richer.</p>
+<p>That last part is the one nobody talks about. AI builds better with more context. Structured customer evidence is the best context you can give it.</p>
 
-<div class="insight">
-<div class="label">Architecture decision</div>
-<p>Not a PM tool with an API. A knowledge base built for agents that PMs curate.</p>
-</div>
-
-<p>The result is a CLAUDE.md schema file that any AI coding tool can read. No database. No backend. Just markdown files, an LLM, and Obsidian for browsing. Three rules: no evidence, no story. Everything traceable. The human curates, the agent maintains.</p>
-
-<h2>Who it's for</h2>
+<h2>Who this is for</h2>
 
 <ul>
-<li><strong>Founders doing customer discovery</strong> who have 20+ call transcripts and can't find patterns without guessing</li>
-<li><strong>Product managers</strong> who want evidence-backed user stories instead of opinion-driven roadmaps</li>
-<li><strong>Engineers and designers</strong> who want to click "why?" on any story and see the exact customer quotes behind it</li>
-<li><strong>AI coding agents</strong> that build better when they have structured customer context, not just a prompt</li>
+<li>Founders who did 20+ customer calls and are making decisions from memory</li>
+<li>PMs who want user stories backed by evidence, not opinions</li>
+<li>Engineers and designers who want to know why they're building something</li>
+<li>Anyone using AI to code and wants better context than "build me a billing page"</li>
 </ul>
 
-<h2>What happened next</h2>
+<h2>The YC connection</h2>
 
-<p>I processed 32 real customer calls. 287 quotes extracted. 9 user stories synthesized. 5 feature areas identified. Every story traces back to what customers actually said.</p>
-
-<p>The wiki became the thing I share with my team. Designers see the exact quotes behind a feature request. Engineers see why a story matters, not just what to build. And when I use AI to write code, having structured customer evidence as context makes the output way better than "build me a billing page."</p>
-
-<p>Then YC published a Request for Startups for "Cursor for Product Management" describing exactly what I'd already built. So I open sourced it.</p>
+<p>After I built this, YC published an RFS for "Cursor for Product Management":</p>
 
 <blockquote>"Upload customer interviews and product usage data, ask 'what should we build next?', and get the outline of a new feature complete with an explanation based on customer feedback."<br>— YC RFS, Spring 2026</blockquote>
+
+<p>That's what this does. I open sourced it.</p>
 
 </section>
 
