@@ -1,51 +1,31 @@
-# Demo Call — StreamLine and Alex Chen
+# Demo Call — Acme AI and Customer A
 
 **Date:** 2026-03-15
-**Participants:** Jordan Taylor (StreamLine CEO), Alex Chen (VP Engineering, Patchwork)
-**Duration:** 28 minutes
+**Participants:** Sam Rivera (Acme AI CEO), Customer A (Head of Product, NovaTech)
+**Duration:** 25 minutes
 
 ---
 
-**Jordan:** Thanks for jumping on this, Alex. I'd love to hear about what your team's dealing with on the project management side.
+**Sam:** Thanks for jumping on. I'd love to hear how you're handling pricing right now.
 
-**Alex:** Yeah, so we're at about 60 engineers now, split across seven teams. We use Linear for tickets, but honestly, every team tracks things a little differently. Some teams are diligent about story points, others just throw tickets in and never estimate. So when leadership asks me "what's our velocity?" I basically have to pull data from seven different projects and try to reconcile it in a spreadsheet.
+**Customer A:** We're an AI writing assistant. We charge a flat $99 a month per seat, but our costs per customer vary wildly. Some customers use 10x more tokens than others. We have no idea what our actual margin is per customer. We just look at the aggregate Stripe revenue and subtract our OpenAI bill and hope the number is positive.
 
-**Jordan:** How long does that take you?
+**Sam:** How do you track token costs?
 
-**Alex:** Probably four to five hours every two weeks. And the numbers are always wrong because teams update their tickets at different times. I'm basically reporting velocity from two sprints ago because that's the last time the data was clean enough to use.
+**Customer A:** We don't, really. Our CTO built a script that pulls from the OpenAI usage API once a day and dumps it into a Google Sheet. It shows total spend but not per-customer. If I want to know what Customer X costs us, I have to go ask an engineer to query the database. That takes a day and the answer is always approximate.
 
-**Jordan:** What happens when the numbers are wrong?
+**Sam:** What happens when a heavy user shows up?
 
-**Alex:** We make bad staffing decisions. Last quarter we thought Team Atlas was underperforming, but it turned out they were doing tons of untracked work — code reviews, incident response, mentoring. We almost pulled their tech lead off to another team before someone caught it. That would have been a disaster.
+**Customer A:** We had a customer last quarter who was generating 50,000 words a day. Our average is about 2,000. We didn't notice for three weeks because nobody monitors per-customer usage. By the time our CTO flagged it, they'd burned through $4,000 in API costs on a $99 subscription. That's a 40x negative margin. We couldn't even retroactively charge them because our pricing model doesn't have usage limits.
 
-**Jordan:** Have you tried any tools to fix this?
+**Sam:** Have you looked at usage-based pricing?
 
-**Alex:** We tried Jellyfish for about three months. The data was good but it cost us $48,000 a year and nobody except me actually logged into it. Forty-eight thousand dollars for a dashboard only one person uses. We cancelled it. Before that we tried building something internal with Metabase, but the engineer maintaining it left and nobody wanted to take it over.
+**Customer A:** We've talked about it for six months. The problem is we don't know how to implement it. Our billing is Stripe subscriptions with fixed plans. Moving to usage-based means we need metering, we need to track tokens per customer in real time, we need to figure out pricing tiers, and then we need to actually change the Stripe integration. Our engineers quoted it at three months of work. Meanwhile we're losing money on heavy users every day.
 
-**Jordan:** So what do you do now?
+**Sam:** What would change if you could see per-customer margins today?
 
-**Alex:** Google Sheets. I have a monster spreadsheet with macros that pulls from the Linear API. It breaks every time Linear changes their API, which is about once a month. Last month it double-counted a bunch of tickets because Linear changed how they handle subtasks. I spent a whole afternoon debugging a spreadsheet formula instead of doing my actual job.
+**Customer A:** I'd immediately know which pricing tier each customer should be on. Right now I'm guessing. I think maybe 10% of our customers are unprofitable, but I literally cannot prove it. If I could see a dashboard that shows revenue minus cost per customer, I'd restructure our pricing within a week. The data would make the decision obvious. Without it, I'm just arguing with my co-founder about gut feelings.
 
-**Jordan:** If you could wave a magic wand, what would you want?
+**Sam:** Would you pay for a tool that did this?
 
-**Alex:** I want one number per team per sprint that I can trust. Not a dashboard with forty charts. One number that tells me "Team Atlas delivered X story points this sprint, here's the trend." And I want to know when a team is quietly drowning — like when they're spending 60% of their time on unplanned work and nobody's flagging it.
-
-**Jordan:** Would you pay for that?
-
-**Alex:** Honestly, yes. I'd pay out of my own budget, not even go through procurement. If you could give me reliable cross-team velocity for under $500 a month, I'd sign today. The $48K we spent on Jellyfish proves there's budget for this, we just need something that actually gets used.
-
-**Jordan:** What about your CTO? Would they need to approve it?
-
-**Alex:** My CTO would approve anything that stops me from sending her wrong numbers. Last board meeting I had to correct a velocity chart mid-presentation. She was not happy. If I came to her with a tool that gives clean numbers automatically, she'd approve it in five minutes.
-
-**Jordan:** How do you handle it when a team pushes back on being measured?
-
-**Alex:** That's the hardest part. Some engineers see velocity tracking as surveillance. Team Nebula's lead literally told me "story points are made up and you're using them to judge us." He's not wrong that story points are imperfect, but I still need something. I'd love a way to frame this as helping teams rather than monitoring them — like showing each team their own trends so they can self-improve rather than having me report on them to leadership.
-
-**Jordan:** That's a really interesting framing. More like a fitness tracker for teams than a surveillance camera.
-
-**Alex:** Exactly. If each team lead could see their own data and make their own decisions, I wouldn't need to be the velocity police. Right now I'm the bad guy because I'm the one who shows up with the spreadsheet.
-
-**Jordan:** One last question — if we built this, how would you want to get the data in? API integration with Linear? CSV upload?
-
-**Alex:** API integration or I'm not interested. I'm done with manual data entry. We already have Linear, GitHub, and PagerDuty. If your tool can pull from those three, you have everything you need. If I have to manually enter anything, it'll die like every other internal tool we've tried.
+**Customer A:** We're currently paying an engineer half their time to maintain billing scripts. That's probably $75,000 a year in engineering time. If a tool could give us per-customer margin visibility, usage tracking, and help us move to usage-based pricing, I'd pay $1,000 a month without blinking. That's a fraction of what we're spending now on the duct tape solution that doesn't even work.

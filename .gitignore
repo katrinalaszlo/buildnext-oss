@@ -6,15 +6,21 @@ config.md
 # User data — never commit real transcripts or wiki output
 raw/*
 !raw/example-transcript.md
+!raw/example-transcript-2.md
+!raw/example-transcript-3.md
 wiki/customers/*
 wiki/stories/*
 wiki/features/*
 !wiki/customers/.gitkeep
-!wiki/customers/Alex Chen.md
+!wiki/customers/Customer A.md
+!wiki/customers/Customer B.md
+!wiki/customers/Customer C.md
 !wiki/stories/.gitkeep
-!wiki/stories/Cross-Team Velocity Is Guesswork.md
+!wiki/stories/No Per-Customer Margin Visibility.md
+!wiki/stories/Manual Billing Doesnt Scale.md
 !wiki/features/.gitkeep
-!wiki/features/Engineering Analytics.md
+!wiki/features/Cost Intelligence.md
+!wiki/features/Pricing Infrastructure.md
 .gstack/
 linkedin-drafts.md
 dm-templates.md
