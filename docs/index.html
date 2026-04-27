@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BuildNext — Turn customer calls into product decisions</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; }
+code, pre { font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; }
+a { color: #58a6ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+header { padding: 80px 0 48px; text-align: center; }
+header h1 { font-size: 2.4rem; color: #f0f6fc; font-weight: 700; margin-bottom: 16px; }
+header p { font-size: 1.15rem; color: #8b949e; max-width: 540px; margin: 0 auto; }
+section { padding: 48px 0; border-top: 1px solid #21262d; }
+h2 { font-size: 1.4rem; color: #f0f6fc; margin-bottom: 24px; }
+h3 { font-size: 1rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 640px) { .before-after { grid-template-columns: 1fr; } header h1 { font-size: 1.8rem; } }
+.panel { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; font-size: 0.85rem; }
+.panel pre { white-space: pre-wrap; word-break: break-word; color: #c9d1d9; }
+.panel .tag { color: #7ee787; }
+.panel .speaker { color: #d2a8ff; }
+.panel .link { color: #58a6ff; }
+.steps { list-style: none; counter-reset: step; }
+.steps li { counter-increment: step; padding: 12px 0; padding-left: 40px; position: relative; }
+.steps li::before { content: counter(step); position: absolute; left: 0; width: 28px; height: 28px; background: #21262d; border-radius: 50%; text-align: center; line-height: 28px; font-size: 0.85rem; color: #58a6ff; font-weight: 600; }
+.output-list { list-style: none; }
+.output-list li { padding: 8px 0; padding-left: 24px; position: relative; }
+.output-list li::before { content: ""; position: absolute; left: 0; top: 16px; width: 8px; height: 8px; background: #58a6ff; border-radius: 50%; }
+.cta { text-align: center; padding: 64px 0; }
+.cta a { display: inline-block; background: #238636; color: #fff; padding: 14px 32px; border-radius: 6px; font-size: 1.05rem; font-weight: 600; }
+.cta a:hover { background: #2ea043; text-decoration: none; }
+.cta p { margin-top: 12px; color: #8b949e; font-size: 0.9rem; }
+.stats { display: flex; gap: 32px; justify-content: center; margin: 32px 0; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat .num { font-size: 2rem; color: #f0f6fc; font-weight: 700; display: block; }
+.stat .label { font-size: 0.8rem; color: #8b949e; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>BuildNext</h1>
+<p>Turn customer call transcripts into evidence-grounded user stories. No database, no SaaS. Markdown, an LLM, and Obsidian.</p>
+</header>
+
+<div class="stats">
+<div class="stat"><span class="num">32</span><span class="label">calls processed</span></div>
+<div class="stat"><span class="num">287</span><span class="label">quotes extracted</span></div>
+<div class="stat"><span class="num">9</span><span class="label">stories synthesized</span></div>
+<div class="stat"><span class="num">5</span><span class="label">features identified</span></div>
+</div>
+
+<section>
+<h2>Before and after</h2>
+<div class="before-after">
+<div>
+<h3>Raw transcript</h3>
+<div class="panel"><pre>Alex: We're at about 60 engineers now,
+split across seven teams. We use Linear
+for tickets, but honestly, every team
+tracks things a little differently.
+When leadership asks me "what's our
+velocity?" I basically have to pull data
+from seven different projects and
+try to reconcile it in a spreadsheet.
+
+Alex: Probably four to five hours every
+two weeks. And the numbers are always
+wrong because teams update their tickets
+at different times...</pre></div>
+</div>
+<div>
+<h3>Structured evidence</h3>
+<div class="panel"><pre><span class="speaker">Alex Chen</span> — Patchwork (VP Eng)
+10 quotes | <span class="tag">#pain-point</span> <span class="tag">#workflow</span> <span class="tag">#buying-signal</span>
+
+- "When leadership asks me 'what's our
+  velocity?' I basically have to pull
+  data from seven different projects and
+  try to reconcile it in a spreadsheet."
+  <span class="tag">#pain-point</span> <span class="tag">#workflow</span>
+
+- "I'd pay out of my own budget. If you
+  could give me reliable cross-team
+  velocity for under $500 a month,
+  I'd sign today."
+  <span class="tag">#buying-signal</span>
+
+Story: <span class="link">[[Cross-Team Velocity Is Guesswork]]</span>
+Feature: <span class="link">[[Engineering Analytics]]</span></pre></div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>How it works</h2>
+<ol class="steps">
+<li><strong>Clone the repo</strong> and copy the example config.<br><code>git clone https://github.com/katrinalaszlo/buildnext-oss.git</code></li>
+<li><strong>Drop a transcript</strong> into the <code>raw/</code> folder. Plain text or markdown.</li>
+<li><strong>Tell your AI editor to "ingest."</strong> Works with Claude Code, Cursor, or Codex. The agent reads the schema and does the rest.</li>
+</ol>
+</section>
+
+<section>
+<h2>What you get</h2>
+<ul class="output-list">
+<li><strong>Customer pages</strong> with exact quotes, speaker attribution, and evidence tags</li>
+<li><strong>User stories</strong> with acceptance criteria, grounded in evidence from multiple customers</li>
+<li><strong>Feature pages</strong> that group stories by product area, problem-first</li>
+<li><strong>Obsidian graph view</strong> showing how customers, stories, and features connect</li>
+<li><strong>Full control</strong> — edit any file and the agent respects your changes</li>
+</ul>
+</section>
+
+<div class="cta">
+<a href="https://github.com/katrinalaszlo/buildnext-oss">Clone it on GitHub</a>
+<p>Open source. MIT license. No signup.</p>
+</div>
+
+</div>
+</body>
+</html>

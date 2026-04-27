@@ -1,0 +1,15 @@
+.DS_Store
+.obsidian/
+.mcp.json
+config.md
+
+# User data — never commit real transcripts or wiki output
+raw/*
+!raw/example-transcript.md
+wiki/customers/*
+wiki/stories/*
+wiki/features/*
+!wiki/customers/.gitkeep
+!wiki/stories/.gitkeep
+!wiki/features/.gitkeep
+.gstack/
