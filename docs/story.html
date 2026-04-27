@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BuildNext — The Story</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0d1117;
+  background-image: radial-gradient(ellipse at top, #161b22 0%, #0d1117 60%);
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+a { color: #58a6ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,17,23,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #21262d; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+nav .nav-left { display: flex; align-items: center; gap: 24px; }
+nav .nav-brand { color: #f0f6fc; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+nav .nav-brand:hover { text-decoration: none; }
+nav .nav-link { color: #8b949e; font-size: 0.85rem; text-decoration: none; }
+nav .nav-link:hover { color: #c9d1d9; text-decoration: none; }
+nav .nav-link.active { color: #f0f6fc; }
+nav .gh-link { color: #8b949e; font-size: 0.85rem; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+nav .gh-link:hover { color: #c9d1d9; text-decoration: none; }
+
+header { padding: 140px 0 48px; }
+header h1 { font-size: 2.2rem; color: #f0f6fc; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
+header .sub { color: #8b949e; font-size: 1rem; }
+
+section { padding: 32px 0; }
+h2 { font-size: 1.3rem; color: #f0f6fc; margin: 48px 0 16px; }
+h2:first-of-type { margin-top: 0; }
+p { margin-bottom: 16px; color: #c9d1d9; font-size: 0.95rem; }
+
+blockquote {
+  border-left: 3px solid #58a6ff;
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: rgba(56,139,253,0.04);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: #d2a8ff;
+}
+
+.insight {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+}
+.insight .label { font-size: 0.75rem; color: #7ee787; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.insight p { margin-bottom: 0; color: #f0f6fc; font-weight: 500; }
+
+.timeline { color: #484f58; font-size: 0.8rem; margin-bottom: 4px; }
+
+ul { margin: 12px 0 16px 20px; }
+li { margin-bottom: 8px; font-size: 0.95rem; }
+
+.cta { text-align: center; padding: 64px 0 80px; border-top: 1px solid #21262d; margin-top: 48px; }
+.cta a {
+  display: inline-block;
+  background: #238636;
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(35,134,54,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: all 0.2s ease;
+}
+.cta a:hover { background: #2ea043; text-decoration: none; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(35,134,54,0.4); }
+.cta p { margin-top: 14px; color: #8b949e; font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  header { padding: 100px 0 36px; }
+  header h1 { font-size: 1.7rem; }
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-left">
+<a href="index.html" class="nav-brand">BuildNext</a>
+<a href="index.html" class="nav-link">How it works</a>
+<a href="story.html" class="nav-link active">The story</a>
+</div>
+<a href="https://github.com/katrinalaszlo/buildnext-oss" class="gh-link">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+GitHub
+</a>
+</nav>
+<div class="container">
+
+<header>
+<p class="timeline">April 2026</p>
+<h1>Why I built this</h1>
+<p class="sub">I did 32 customer discovery calls for Tanso. I had transcripts for all of them. I could not tell you which pain points actually recurred across customers without guessing.</p>
+</header>
+
+<section>
+
+<h2>The problem</h2>
+
+<p>Customer discovery has a dirty secret: most founders stop synthesizing after call 10. You still do the calls. You just stop turning them into structured decisions. The transcripts pile up. The insights stay locked in your head.</p>
+
+<p>I tried spreadsheets. I tried tagging quotes in Notion. Both required me to do the organizing, which meant it didn't get done. I was making product decisions from memory, not evidence.</p>
+
+<h2>The insight</h2>
+
+<div class="insight">
+<div class="label">Key realization</div>
+<p>The user story isn't something a PM writes. It's something the data produces. The PM just approves it.</p>
+</div>
+
+<p>I'd already built a version of this manually at a previous company in Airtable: feature requests flowing into user stories with exact quotes, grouped by theme. The structure was right. The manual work was the problem.</p>
+
+<p>What if an AI agent could maintain the knowledge base? Read new transcripts, extract quotes, update customer pages, synthesize user stories, flag contradictions. The PM curates. The agent does the bookkeeping.</p>
+
+<h2>The architecture</h2>
+
+<p>Embedding-based clustering turned out to be useless. "These vectors are close" doesn't mean "these are about the same problem." What I needed was an LLM that actively maintains a structured knowledge base.</p>
+
+<p>Inspired by Karpathy's LLM Wiki pattern: source summaries, entity pages that evolve over time, concept pages that grow across customers, synthesis pages for cross-customer analysis. Every claim traceable to a source. Every new ingest makes the knowledge base richer.</p>
+
+<div class="insight">
+<div class="label">Architecture decision</div>
+<p>Not a PM tool with an API. A knowledge base built for agents that PMs curate.</p>
+</div>
+
+<p>The result is a CLAUDE.md schema file that any AI coding tool can read. No database. No backend. Just markdown files, an LLM, and Obsidian for browsing. Three rules: no evidence, no story. Everything traceable. The human curates, the agent maintains.</p>
+
+<h2>Who it's for</h2>
+
+<ul>
+<li><strong>Founders doing customer discovery</strong> who have 20+ call transcripts and can't find patterns without guessing</li>
+<li><strong>Product managers</strong> who want evidence-backed user stories instead of opinion-driven roadmaps</li>
+<li><strong>Engineers and designers</strong> who want to click "why?" on any story and see the exact customer quotes behind it</li>
+<li><strong>AI coding agents</strong> that build better when they have structured customer context, not just a prompt</li>
+</ul>
+
+<h2>What happened next</h2>
+
+<p>I processed 32 real customer calls. 287 quotes extracted. 9 user stories synthesized. 5 feature areas identified. Every story traces back to what customers actually said.</p>
+
+<p>The wiki became the thing I share with my team. Designers see the exact quotes behind a feature request. Engineers see why a story matters, not just what to build. And when I use AI to write code, having structured customer evidence as context makes the output way better than "build me a billing page."</p>
+
+<p>Then YC published a Request for Startups for "Cursor for Product Management" describing exactly what I'd already built. So I open sourced it.</p>
+
+<blockquote>"Upload customer interviews and product usage data, ask 'what should we build next?', and get the outline of a new feature complete with an explanation based on customer feedback."<br>— YC RFS, Spring 2026</blockquote>
+
+</section>
+
+<div class="cta">
+<a href="https://github.com/katrinalaszlo/buildnext-oss">Clone it on GitHub</a>
+<p>Open source. MIT license. No signup.</p>
+</div>
+
+</div>
+</body>
+</html>
