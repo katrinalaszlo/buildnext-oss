@@ -17,3 +17,4 @@
 - [[Customer A]] — NovaTech, 8 quotes, token cost visibility and margin pain
 - [[Customer B]] — Stackform, 8 quotes, billing infrastructure and credits complexity
 - [[Customer C]] — Peakflow, 7 quotes, pricing simulation and outcome-based pricing
+- [[David Garnitz]] — Friend/Peer, 7 quotes, $200K API cost bug, cloud guardrails, free-tier GTM

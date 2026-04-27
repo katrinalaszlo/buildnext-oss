@@ -1,29 +1,36 @@
 ---
 title: "Pricing Infrastructure"
 type: feature
-priority: high
-stories: 1
-evidence: 8
+priority: medium
+stories: 3
 ---
 
 # Pricing Infrastructure
 
-Billing infrastructure that handles usage-based pricing without custom code.
+Stripe handles payments. Everything between the payment and the product — entitlements,  metering,  pricing logic — companies build by hand or don't build at all.
 
-**Stories:** 1 | **Evidence:** 8 quotes across 2 customers
+**Stories:** 3 | **Evidence:** 14 quotes across 11 customers
 
 ---
 
 ## The problem
 
-SaaS companies outgrow flat-rate Stripe subscriptions but can't afford to build usage-based billing from scratch. The transition from "simple subscription" to "metered usage with credits" takes months of engineering. Teams end up maintaining thousands of lines of billing code that nobody wants to touch, or paying $50K+ for enterprise billing platforms.
+Three flavors of the same gap:
+
+**Manual billing that breaks at scale.** Moe Amaya creates Stripe subscriptions by hand and flips autopay after payment. Chris Price manually adds credits. These workarounds hold for 5-10 customers. They collapse at 50.
+
+**Can't bill for outcomes.** Corey Engel needs to charge per document generated and data ingested — metrics Stripe doesn't model. Joe Siracusa wants pricing triggered by customer milestones like funding rounds. Rob Enslow charges cost-plus on AI credits but wants to move to per-meeting-booked.
+
+**Build vs buy stalemate.** Rob Enslow says he can build anything in an hour with Claude. Jerry O'Shea's company rejected Paid AI after a $50K pro-serve proposal. Colby Hill doesn't feel urgency. The bar: simpler than DIY,  cheaper than enterprise vendors.
 
 ## Strongest signal
 
-> "We have 14 different billing code paths. Last month we shipped a bug that double-charged 30 customers because one of those paths had a race condition." — [[Customer B]]
+> "right now we're very very jerryrigged. Basically I just send someone a subscription like I go into Stripe and I create a subscription object and I just send them the payment link." — [[Moe Amaya]]
 
-> "I want to define my pricing model in a config file and have the system figure out the rest." — [[Customer B]]
+> "I have to create custom metrics for how I want to bill third party consultancies based on what they're producing,  how they're producing it,  and what decisions are being made. Haven't been able to." — [[Corey Engel]]
 
 ## Stories
 
-- [[Manual Billing Doesnt Scale]] — 3 customers, proposed
+- [[Manual Stripe Workflows Don't Scale]] — 5 customers,  proposed
+- [[Can't Bill for Custom Outcome Metrics]] — 4 customers,  proposed
+- [[Build vs Buy Tension for Billing]] — 5 customers,  proposed

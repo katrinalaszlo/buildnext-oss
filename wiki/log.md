@@ -1,5 +1,19 @@
 # Log
 
+## [2026-04-27] ingest | David Garnitz call
+
+**Changes:**
+- Created [[David Garnitz]] customer page — 7 quotes extracted
+- Updated [[Runaway AI Costs Without Guardrails]] — added 4 quotes from David, evidence count 4 → 5 customers
+- Updated [[Cost Intelligence]] — evidence count 14 → 19 quotes across 10 → 11 customers
+- Updated index with new customer entry
+
+**Why:** David is a friend/peer (AI infra engineer at a ~40-person startup), not a prospect. But his signal is strong: his company just burned $200K on an unguarded API cost bug in production. Cloud providers don't implement hard limits by default (AWS literally won't). His team of 40 devs tunes out alerts. He suggested a wrapper/proxy that blocks API calls at threshold — maps directly to the guardrails story. He also said he'd install a free CLI/package for cost visibility even if he wouldn't pay on day one — GTM signal for open-source/freemium entry.
+
+**Held back:**
+- David's comments about Langfuse competition and "crowded space" are market intelligence but don't map to a specific story. Captured on customer page only.
+- "Not a startup problem... more of a serious risk at growing companies" — market positioning signal, not a story. On customer page.
+
 ## [2026-03-15] ingest | Example transcript — Customer A (NovaTech)
 
 **Changes:**
