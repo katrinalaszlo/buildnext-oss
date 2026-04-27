@@ -2,6 +2,10 @@
 
 Turn raw customer signal into evidence-grounded user stories. No database, no hosting — just markdown and an LLM.
 
+![Obsidian graph view showing customers, stories, and features linked together](docs/graph-view.png)
+
+![Story page with user story, acceptance criteria, and evidence quotes](docs/story-view.png)
+
 ## How it works
 
 BuildNext is a Karpathy-style LLM wiki for product development. You give it raw customer signal (call transcripts, support tickets, notes). An AI agent reads, extracts, and synthesizes it into a structured knowledge base you can browse in Obsidian or query from any agent.
