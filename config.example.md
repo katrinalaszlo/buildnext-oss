@@ -4,8 +4,7 @@
 
 These are team members — skip their quotes during ingestion. Only extract quotes from external speakers (customers, prospects, partners).
 
-- Your Name
-- Teammate Name
+- Sam Rivera
 
 ## Evidence tags
 
